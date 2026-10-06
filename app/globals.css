@@ -1,26 +1,73 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
+:root {
+  /* Dark-first theme based on request */
+  --background: #030712; /* deep navy/black */
+  --foreground: #f3f4f6;
+  --surface: rgba(17, 24, 39, 0.4);
+  --surface-hover: rgba(31, 41, 55, 0.6);
+  --border: rgba(255, 255, 255, 0.08);
+  --accent: #38bdf8; /* subtle cyan highlight */
+  --accent-hover: #7dd3fc;
+  --muted: #9ca3af;
+  --primary: #818cf8; /* muted purple/blue */
+}
+
+@media (prefers-color-scheme: light) {
+  /* We maintain a dark default unless light is explicitly requested, but user wanted dark-first. Let's make it always dark or highly dark-biased */
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f172a; /* keep it dark even in light mode, as it's an identity, or maybe a slightly lighter dark theme */
+    --foreground: #f8fafc;
+    --surface: #1e293b;
+    --surface-hover: #334155;
+    --border: #334155;
+    --accent: #0ea5e9;
+    --accent-hover: #38bdf8;
+    --muted: #cbd5e1;
+    --primary: #6366f1;
   }
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar for technical feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--surface-hover);
+}
+
+::selection {
+  background: rgba(56, 189, 248, 0.2);
+  color: var(--accent-hover);
 }
