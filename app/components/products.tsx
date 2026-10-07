@@ -1,7 +1,9 @@
+import { FadeIn } from './animations';
+
 export function Products() {
   return (
-    <section id="products" className="py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="products" className="py-24 scroll-mt-16">
+      <FadeIn className="mx-auto max-w-5xl px-6">
         <h2 className="text-sm font-mono tracking-widest text-muted uppercase mb-8">
           04 // Products
         </h2>
@@ -17,7 +19,7 @@ export function Products() {
             noybcore builds software products and SaaS applications that run independently. While our foundational tools and libraries are shared publicly, products like <span className="text-foreground font-medium">GMAO SaaS</span> are developed as complete, closed systems.
           </p>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

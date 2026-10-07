@@ -1,7 +1,9 @@
+import { FadeIn } from './animations';
+
 export function Philosophy() {
   return (
-    <section id="about" className="py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="about" className="py-24 scroll-mt-16">
+      <FadeIn className="mx-auto max-w-5xl px-6">
         <h2 className="text-sm font-mono tracking-widest text-muted uppercase mb-12">
           05 // Philosophy
         </h2>
@@ -35,18 +37,18 @@ export function Philosophy() {
               </p>
             </div>
             
-            <div className="rounded-lg border border-border bg-surface p-6 mt-12">
+            <div className="rounded-lg border border-border bg-surface p-6 mt-12 transition-all hover:border-accent/30 hover:bg-surface-hover">
               <h4 className="text-sm font-medium text-foreground uppercase tracking-widest mb-2">Built independently</h4>
               <p className="text-sm text-muted">
                 Developed under noybcore. The organization is built independently with the goal of growing through software, open source, and useful ideas.{' '}
-                <a href="https://ybouali.dev" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-accent transition-colors underline underline-offset-4 decoration-border hover:decoration-accent">
+                <a href="https://ybouali.dev" target="_blank" rel="noopener noreferrer" className="text-foreground transition-all underline underline-offset-4 decoration-border hover:decoration-accent hover:text-accent">
                   Learn more
                 </a>
               </p>
             </div>
           </div>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

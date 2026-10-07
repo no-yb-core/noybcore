@@ -1,7 +1,9 @@
+import { FadeIn } from './animations';
+
 export function OpenSource() {
   return (
-    <section id="open-source" className="border-y border-border bg-surface/30 py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="open-source" className="border-y border-border bg-surface/30 py-24 scroll-mt-16">
+      <FadeIn className="mx-auto max-w-5xl px-6">
         <h2 className="text-sm font-mono tracking-widest text-muted uppercase mb-8">
           03 // Open Source
         </h2>
@@ -21,7 +23,7 @@ export function OpenSource() {
               href="https://github.com/no-yb-core"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-10 items-center justify-center rounded-md bg-foreground px-6 text-sm font-medium text-background transition-colors hover:bg-muted"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-foreground px-6 text-sm font-medium text-background transition-all hover:bg-muted active:scale-[0.98]"
             >
               Explore open source
             </a>
@@ -38,7 +40,7 @@ export function OpenSource() {
             </div>
           </div>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }

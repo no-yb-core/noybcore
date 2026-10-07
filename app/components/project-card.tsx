@@ -2,7 +2,7 @@ import { Project } from '../data/projects';
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="group relative flex flex-col justify-between overflow-hidden rounded-lg border border-border bg-background p-6 transition-colors hover:border-accent/50 hover:bg-surface-hover">
+    <div className="group relative flex flex-col justify-between overflow-hidden rounded-lg border border-border bg-background p-6 transition-all duration-300 hover:-translate-y-0.5 hover:border-accent/50 hover:bg-surface-hover hover:shadow-[0_4px_24px_-8px_rgba(56,189,248,0.1)]">
       <div>
         <div className="mb-4 flex items-center justify-between text-xs font-mono text-muted uppercase">
           <div className="flex gap-2">
